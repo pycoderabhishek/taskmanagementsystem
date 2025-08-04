@@ -1,0 +1,18 @@
+// To load any  css or image in your html page write 
+
+{% load staic %}     //at top of your page
+
+<link rel="stylesheet" href="{% statics 'css/styless.css' %}"> //like this use curly brackets
+
+<img src="{% statics 'images/naruto.png' %}" alt="naruto" >// for images
+
+
+///////******//////
+URLs with their names and usage
+
+0. admin/   this one has no name for now backend will add it soon
+
+1.name = "homepage"   a homepage link {newbackend/urls.py}  
+2.name = ""EventForm"   eventcreationform link {newbackend/urls.py}
+
+//////*****///////

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}{{ form_title }}{% endblock %}
+
+{% block content %}
+<div class="py-12">
+    <div class="max-w-2xl mx-auto px-6">
+        <div class="bg-[#BDD8E9] rounded-xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">{{ form_title }}</h2>
+            <form class="styled-form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="mt-6 flex gap-4">
+                    <a href="{% url 'homepage' %}" class="flex-1 text-center bg-[#49769F] text-white font-semibold py-3 px-4 rounded-lg hover:bg-[#7BBDE8] transition">Cancel</a>
+                    <button type="submit" class="flex-1 text-center bg-[#0A4174] text-white font-semibold py-3 px-4 rounded-lg hover:bg-[#001D39] transition shadow-md">Submit Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
