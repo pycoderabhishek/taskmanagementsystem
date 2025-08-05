@@ -16,3 +16,19 @@ URLs with their names and usage
 2.name = ""EventForm"   eventcreationform link {newbackend/urls.py}
 
 //////*****///////
+
+****** Models Section ********
+
+ EventCreate  = is the modelname (Used to access events)
+ 
+  below are the column names with their characteristics
+    EventName = models.CharField(max_length=30)
+    EventDescription = models.CharField(max_length=100)
+    EventVenue = models.CharField(max_length=30)
+    EventDate = models.DateField(default='2025-07-20')
+
+common name to be used for utilization in loops is events i.e 
+
+for event in events : print ( event.Eventfield name )
+
+****** Models Section ********
