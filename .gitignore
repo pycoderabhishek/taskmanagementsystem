@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django migrations
+**/migrations/
+!*/migrations/__init__.py
+
+# SQLite database file
+*.sqlite3
+*.db
+*.sql
+
+# VS Code settings
+.vscode/
+
+# Environment files
+setup
+setup.*
+
+# Python virtual environments
+venv/
+setup/
+setup/
+
+# IDE-specific files
+.idea/
+*.swp
+
+# MacOS system files
+.DS_Store
+
+# Log files
+*.log
+
+# Node modules (if using JS tools)
+node_modules/
+
+# Media & static files (optional if generated)
+media/
+staticfiles/
+
+# Compiled files and cache
+*.pyc
+*.pyo
+*.pyd
