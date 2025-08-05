@@ -18,11 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from newbackend import views
 from Events import views as Events_views
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.homepage,name = "homepage"),
-    path("EventCreationForm",Events_views.CreatingEvents,name = "EventForm"),
-    path("EventUpdationForm/<int:id>/",Events_views.UpdatingEvents,name = "UpdateForm"),
-    path("Delete/<int:id>/",Events_views.DeleteEvents,name = "DeleteEvent")
+    path("Events/",include("Events.urls"))
 ]
