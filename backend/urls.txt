@@ -13,6 +13,12 @@ URLs with their names and usage
 0. admin/   this one has no name for now backend will add it soon
 
 1.name = "homepage"   a homepage link {newbackend/urls.py}  
-2.name = ""EventForm"   eventcreationform link {newbackend/urls.py}
-
+2.name = ""EventForm"   eventcreationform link {Event/urls.py}
+3.name = "Updateform"  event updation form link {Event/urls.py}
+4.name ="DeleteEvent" event deletion form link {Event/urls.py}
 //////*****///////
+VIEWS variables names, views class name and its usage 
+
+1. obj used in "homepage" function in views.py(newbackend) , object for displaying all events 
+2. form used in "Createvent" "Updateform" function in views.py(Event), object to save data data in db through EventCreateForm
+3. event used in "Updateform" "DeleteEvent" function in views.py(Event) , object to get a particular event to update or delete based on id

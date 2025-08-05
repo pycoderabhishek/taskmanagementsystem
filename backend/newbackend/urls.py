@@ -17,11 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from newbackend import views
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.homepage,name = "homepage"),
-    path("EventCreationForm",views.CreatingEvents,name = "EventForm"),
-    path("EventUpdationForm/<int:id>/",views.UpdatingEvents,name = "UpdateForm"),
-    path("Delete/<int:id>/",views.DeleteEvents,name = "DeleteEvent")
+    path("Events/", include("Events.urls")),
+    
 ]
