@@ -1,22 +1,80 @@
 {% extends 'base.html' %}
-{% block title %}Confirm Delete{% endblock %}
+{% block title %}Update Event{% endblock %}
 
 {% block content %}
-<div class="py-20">
-    <div class="max-w-lg mx-auto px-6">
-        <div class="bg-[#BDD8E9] rounded-xl shadow-lg p-8 text-center">
-            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
-                <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-            </div>
-            <h2 class="text-2xl font-bold text-slate-800">Delete Event</h2>
-            <p class="text-slate-500 mt-2">Are you sure you want to delete the event "{{ event.name }}"? This action cannot be undone.</p>
-            <form method="post" class="mt-6">
+<div class="py-12 min-h-screen bg-[#E8F0F8]">
+    <div class="max-w-2xl mx-auto px-6">
+        <div class="bg-[#BDD8E9] rounded-xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-[#001D39] mb-2 text-center">Update Event</h2>
+            <p class="text-[#49769F] text-center mb-8">Modify the details below and click Update to save.</p>
+
+            <form action="{% url 'UpdateForm' event.pk %}" method="post" class="space-y-6">
                 {% csrf_token %}
-                <div class="flex gap-4">
-                    <a href="{% url 'homepage' %}" class="flex-1 text-center bg-slate-100 text-slate-700 font-semibold py-2 px-4 rounded-lg hover:bg-slate-200 transition">Cancel</a>
-                    <button type="submit" class="flex-1 text-center bg-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition">Yes, Delete</button>
+
+                <!-- Event Name -->
+                <div>
+                    <label for="id_EventName" class="mb-2 block font-semibold text-[#0A4174]">Event Name</label>
+                    <textarea 
+                        name="EventName" 
+                        id="id_EventName"
+                        style="width:100%; height:50px; border:2px solid #6EA2B3; border-radius:8px; resize:none; padding:10px;"
+                    >{{ form.initial.EventName }}</textarea>
+                    {% if form.EventName.errors %}
+                        <p class="text-red-600 text-sm mt-1">{{ form.EventName.errors|striptags }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Event Description -->
+                <div>
+                    <label for="id_EventDescription" class="mb-2 block font-semibold text-[#0A4174]">Event Description</label>
+                    <textarea 
+                        name="EventDescription" 
+                        id="id_EventDescription"
+                        style="width:100%; height:150px; border:2px solid #6EA2B3; border-radius:8px; resize:none; padding:10px;"
+                    >{{ form.initial.EventDescription }}</textarea>
+                    {% if form.EventDescription.errors %}
+                        <p class="text-red-600 text-sm mt-1">{{ form.EventDescription.errors|striptags }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Event Venue -->
+                <div>
+                    <label for="id_EventVenue" class="mb-2 block font-semibold text-[#0A4174]">Event Venue</label>
+                    <input 
+                        type="text" 
+                        name="EventVenue" 
+                        id="id_EventVenue"
+                        value="{{ form.initial.EventVenue }}"
+                        style="width:100%; height:50px; border:2px solid #6EA2B3; border-radius:8px; padding:10px;"
+                    />
+                    {% if form.EventVenue.errors %}
+                        <p class="text-red-600 text-sm mt-1">{{ form.EventVenue.errors|striptags }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Event Date -->
+                <div>
+                    <label for="id_EventDate" class="mb-2 block font-semibold text-[#0A4174]">Event Date</label>
+                    <input 
+                        type="date" 
+                        name="EventDate" 
+                        id="id_EventDate"
+                        value="{{ form.initial.EventDate }}"
+                        style="width:100%; height:50px; border:2px solid #6EA2B3; border-radius:8px; padding:10px;"
+                    />
+                    {% if form.EventDate.errors %}
+                        <p class="text-red-600 text-sm mt-1">{{ form.EventDate.errors|striptags }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-end items-center gap-4 pt-6">
+                    <a href="{% url 'homepage' %}" class="bg-transparent hover:bg-gray-200 text-[#49769F] font-semibold px-6 py-2 rounded-lg border border-[#6EA2B3] shadow-sm">
+                        Cancel
+                    </a>
+                    <button type="submit" class="bg-[#0A4174] hover:bg-[#001D39] text-white font-semibold px-6 py-2 rounded-lg shadow-md">
+                        Update Event
+                    </button>
                 </div>
             </form>
         </div>

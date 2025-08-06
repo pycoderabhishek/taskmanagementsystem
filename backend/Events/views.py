@@ -5,8 +5,8 @@ from .models import EventCreate
 def CreatingEvents(request):
     if(request.method == 'POST'):
         form = EventCreateForm(request.POST)
-   
         if(form.is_valid()):
+            print("success")
             form.save()
             return redirect("homepage")
         else :
@@ -16,9 +16,8 @@ def CreatingEvents(request):
     return render(request,"eventcreateform.html",{'form':form})
 
 def UpdatingEvents(request,id):
+    event = get_object_or_404(EventCreate,id=id)
     if(request.method == 'POST'):
-        event = get_object_or_404(EventCreate,id=id)
-    
         form = EventCreateForm(request.POST, instance=event)
         if(form.is_valid()):
             form.save()

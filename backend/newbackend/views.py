@@ -5,5 +5,5 @@ from Events.models import EventCreate
 
 def homepage(request):
     obj= EventCreate.objects.all()
-    return render(request,"homepage.html",{"ReadingEvents":obj})
+    return render(request,"homepage.html",{"events":obj})
 
