@@ -4,6 +4,7 @@ from Events.forms import EventCreateForm
 from Events.models import EventCreate
 
 def homepage(request):
+<<<<<<< HEAD
     events= EventCreate.objects.all()
     
     return render(request,"homepage.html",{"events":events})
@@ -37,4 +38,8 @@ def DeleteEvents(request,id):
     event = get_object_or_404(EventCreate,id=id)
     event.delete()
     return redirect("homepage")    
+=======
+    obj= EventCreate.objects.all()
+    return render(request,"homepage.html",{"events":obj})
+>>>>>>> 307a02069acff0383bd3afd66cf0e6a1ca0821f4
 
