@@ -17,11 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from newbackend import views
+<<<<<<< HEAD
+=======
+from Events import views as Events_views
+>>>>>>> b205632a24384ff2cf8d7f0b0b139de9e454c5fd
 from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.homepage,name = "homepage"),
+<<<<<<< HEAD
     path("Events/", include("Events.urls")),
     
+=======
+    path("Events/",include("Events.urls"))
+>>>>>>> b205632a24384ff2cf8d7f0b0b139de9e454c5fd
 ]

@@ -20,6 +20,7 @@ URLs with their names and usage
 VIEWS variables names, views class name and its usage 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //////*****///////
 
 
@@ -39,3 +40,22 @@ EventDate
 2. form used in "Createvent" "Updateform" function in views.py(Event), object to save data data in db through EventCreateForm
 3. event used in "Updateform" "DeleteEvent" function in views.py(Event) , object to get a particular event to update or delete based on id
 >>>>>>> 307a02069acff0383bd3afd66cf0e6a1ca0821f4
+=======
+//////*****///////
+
+****** Models Section ********
+
+ EventCreate  = is the modelname (Used to access events)
+ 
+  below are the column names with their characteristics
+    EventName = models.CharField(max_length=30)
+    EventDescription = models.CharField(max_length=100)
+    EventVenue = models.CharField(max_length=30)
+    EventDate = models.DateField(default='2025-07-20')
+
+common name to be used for utilization in loops is events i.e 
+
+for event in events : print ( event.Eventfield name )
+
+****** Models Section ********
+>>>>>>> b205632a24384ff2cf8d7f0b0b139de9e454c5fd

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+<<<<<<< HEAD
 {% block title %}Update Event{% endblock %}
 
 {% block content %}
@@ -78,6 +79,31 @@
                 </div>
             </form>
         </div>
+=======
+{% block title %}Confirm Delete{% endblock %}
+<!-- Harshit apply css over this html file like in createevents.html -->
+{% block content %}
+<div class="form-container">
+    <h2>Update Event</h2>
+    <p>Fill out the details below to update event.</p>
+    <div class="event-card">
+            <h3>{{ event.EventName }}</h3>
+            <p class="description">{{ event.EventDescription }}</p>
+            <hr>
+            <p><strong>Venue:</strong> {{ event.EventVenue }}</p>
+            <p><strong>Date:</strong> {{ event.EventDate }}</p>
+>>>>>>> b205632a24384ff2cf8d7f0b0b139de9e454c5fd
     </div>
+
+    <form action="{% url 'UpdateForm' event.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button-primary">Submit Event</button>
+    </form>
 </div>
+<<<<<<< HEAD
 {% endblock %}
+=======
+
+{% endblock %}
+>>>>>>> b205632a24384ff2cf8d7f0b0b139de9e454c5fd

@@ -7,6 +7,7 @@ def homepage(request):
 <<<<<<< HEAD
     events= EventCreate.objects.all()
     
+<<<<<<< HEAD
     return render(request,"homepage.html",{"events":events})
 
 def CreatingEvents(request):
@@ -42,4 +43,9 @@ def DeleteEvents(request,id):
     obj= EventCreate.objects.all()
     return render(request,"homepage.html",{"events":obj})
 >>>>>>> 307a02069acff0383bd3afd66cf0e6a1ca0821f4
+=======
+    return render(request,"homepage.html",{"events":obj})
+
+    
+>>>>>>> b205632a24384ff2cf8d7f0b0b139de9e454c5fd
 
