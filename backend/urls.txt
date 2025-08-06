@@ -16,3 +16,16 @@ URLs with their names and usage
 2.name = ""EventForm"   eventcreationform link {newbackend/urls.py}
 
 //////*****///////
+
+
+////////////////////updates by abhishek
+goto newbackend/views.py
+
+-----at home()
+evetns  ---object stores evetns-- to display events
+evetns details--------
+EventName
+EventDescription
+EventVenue
+EventDate
+
